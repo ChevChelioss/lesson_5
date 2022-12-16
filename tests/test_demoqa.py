@@ -29,4 +29,4 @@ def test_registration_form():
 def test_conformity():
     browser.all('.table tr td ~td').should(
         have.texts('Chev Chelios', 'test_090@gmail.com', 'Male', '7298965483', '08 December,1980', 'Accounting',
-                   'Sports', '1.png', 'Moscow', 'NCR Delhi'))
+                   'Sports', 'sampleFile.jpeg', 'Moscow', 'NCR Delhi'))
