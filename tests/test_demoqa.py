@@ -1,5 +1,6 @@
 from selene.support.shared import browser
 from selene import have, be
+import os
 
 
 def test_registration_form():
@@ -17,7 +18,8 @@ def test_registration_form():
     browser.element('.react-datepicker__day--008').click()
     browser.element('#subjectsInput').type('Accounting').press_enter()
     browser.element('[for="hobbies-checkbox-1"]').click()
-    browser.element('#uploadPicture').send_keys(r'C:\Users\User\Desktop\картинки\1.png')
+    browser.element("#uploadPicture").set_value(
+        os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, 'picture_test/sampleFile.jpeg')))
     browser.element('#currentAddress').type('Moscow')
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
